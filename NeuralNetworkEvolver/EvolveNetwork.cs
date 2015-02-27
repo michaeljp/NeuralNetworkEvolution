@@ -21,6 +21,7 @@ namespace NeuralNetworkEvolver
         public int Generations { get; set; }
         private double bestIndividualFitness { get; set; }
         public Dataset Data { get; set; }
+        public int NumberOfGenesToMutate { get; set; }
 
         public EvolveNetwork(NeuralNetwork network, Dataset dataset)
         {
@@ -35,6 +36,7 @@ namespace NeuralNetworkEvolver
             this.Generations = 20000;
             this.Data = dataset;
             this.bestIndividualFitness = 0.0;
+            this.NumberOfGenesToMutate = 3;
 
             createPopulation(this.PopulationSize);
         }
@@ -148,8 +150,7 @@ namespace NeuralNetworkEvolver
         /* Mutate a child genome, implementing small changes to the genes. */
         public double[] mutate(double[] childGenome)
         {
-            int numberOfGenesToMutate = 3;
-            for (int i = 0; i < numberOfGenesToMutate; i++)
+            for (int i = 0; i < this.NumberOfGenesToMutate; i++)
             {
                 int randIndex = Convert.ToInt16(Math.Abs(uniformRandomNumber()) * (this.genomeLength - 1));
                 childGenome[randIndex] += gaussianRandomNumber();
@@ -183,7 +184,7 @@ namespace NeuralNetworkEvolver
             for (int generation = 0; generation < this.Generations; generation++)
             {
                 if (generation % 100 == 0)
-                    Console.WriteLine("Generation: {0} Best Fitness: {1}",
+                    Console.WriteLine("Generation: {0} Best Fitness: {1:F6}",
                         generation, this.bestIndividualFitness);
                 runEvolutionStep();
             }
