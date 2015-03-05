@@ -33,7 +33,7 @@ namespace NeuralNetworkEvolver
             // Evolve network to recognise XOR with 3 inputs
             NeuralNetwork xor3Network = new NeuralNetwork(3, 3, 1);
             EvolveNetwork en3 = new EvolveNetwork(xor3Network, xor3Dataset);
-            en3.Generations = 10000;
+            en3.Generations = 2000;
             en3.PopulationSize = 1000;
             en3.RunEvolution();
             Console.ReadLine();

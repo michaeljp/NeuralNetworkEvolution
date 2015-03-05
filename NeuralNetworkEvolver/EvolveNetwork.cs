@@ -33,7 +33,7 @@ namespace NeuralNetworkEvolver
             this.TournamentSelectionNumber = 5;
             this.CrossoverRate = 0.9;
             this.MutationRate = 0.9;
-            this.Generations = 20000;
+            this.Generations = 10000;
             this.Data = dataset;
             this.bestIndividualFitness = 0.0;
             this.NumberOfGenesToMutate = 3;

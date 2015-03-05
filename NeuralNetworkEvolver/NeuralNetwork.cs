@@ -49,13 +49,8 @@ namespace NeuralNetworkEvolver
         }
         public double ActivationFunction(double inputSum)
         {
-            // Sigmoid Function
-            if (inputSum > 45.0)
-                return 1.0;
-            else if (inputSum < -45.0)
-                return -1.0;
-            else
-                return 1.0 / (1.0 + Math.Exp(-inputSum));
+            // Steepened Sigmoid Function
+            return 1.0 / (1.0 + Math.Exp(-3 * inputSum));
         }
     }
 
