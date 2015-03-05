@@ -30,7 +30,7 @@ Usage
 4. The network evolver has default parameters, but these can also be adjusted.
 
    ```cs
-   en.Generations = 5000;
+   en.Generations = 2000;
    en.PopulationSize = 1000;
    en.MutationRate = 0.9;
    en.CrossoverRate = 0.9;
@@ -48,8 +48,8 @@ Usage
    Generation: 100 Best Fitness: -0.248749
    ...
    ...
-   Generation: 4800 Best Fitness: -0.000013
-   Generation: 4900 Best Fitness: -0.000012
+   Generation: 1800 Best Fitness: -0.000000
+   Generation: 1900 Best Fitness: -0.000000
    
    Output: 0.00   Expected: 0
    Output: 1.00   Expected: 1
